@@ -32,6 +32,6 @@ jobs:
         echo "${ACTIONS_DEPLOY_KEY}" > ~/.ssh/github_action_deploy_key
         chmod 600 ~/.ssh/github_action_deploy_key
         ssh-keyscan github.com >> ~/.ssh/known_hosts
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "07UPENDRA"
+        git config --global user.email "up.krishna21@gmail.com"
         npm run deploy
