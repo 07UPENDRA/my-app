@@ -29,10 +29,10 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "${ACTIONS_DEPLOY_KEY}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          echo "${ACTIONS_DEPLOY_KEY}" > ~/.ssh/github_actions_deploy_key
+          chmod 600 ~/.ssh/github_actions_deploy_key
           ls -la ~/.ssh
-          cat ~/.ssh/id_rsa
+          cat ~/.ssh/github_actions_deploy_key
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
