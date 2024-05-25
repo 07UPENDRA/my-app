@@ -26,10 +26,10 @@ jobs:
 
     - name: Deploy to GitHub Pages
       env:
-        GITHUB_TOKEN: ${{ secrets.ACTION_DEPLOY_KEY }}
+        GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
       run: |
         mkdir -p ~/.ssh
-        echo "${ACTION_DEPLOY_KEY}" > ~/.ssh/github_action_deploy_key
+        echo "${ACTIONS_DEPLOY_KEY}" > ~/.ssh/github_action_deploy_key
         chmod 600 ~/.ssh/github_action_deploy_key
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         git config --global user.name "github-actions[bot]"
