@@ -26,13 +26,8 @@ jobs:
 
     - name: Deploy to GitHub Pages
       env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        mkdir -p ~/.ssh
-        echo "${ACTIONS_DEPLOY_KEY}" > ~/.ssh/github_actions_deploy_key
-        chmod 600 ~/.ssh/github_actions_deploy_key
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-        git config --global user.name "07UPENDRA"
-        git config --global user.email "up.krishna21@gmail.com"
-        git remote set-url origin git@github.com:07UPENDRA/my-app.git
-        GIT_SSH_COMMAND='ssh -i ~/.ssh/github_actions_deploy_key' npm run deploy
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        npm run deploy
