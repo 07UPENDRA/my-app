@@ -29,8 +29,8 @@ jobs:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
       run: |
         mkdir -p ~/.ssh
-        echo "${ACTIONS_DEPLOY_KEY}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+        echo "${ACTIONS_DEPLOY_KEY}" > ~/.ssh/id_rsa2
+        chmod 600 ~/.ssh/id_rsa2
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         git config --global user.name "07UPENDRA"
         git config --global user.email "up.krishna21@gmail.com"
