@@ -3,11 +3,14 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master  # Adjust this if your main branch is not master
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    env:
+      GIT_SSH_COMMAND: 'ssh -i ~/.ssh/personal'
 
     steps:
       - name: Checkout code
@@ -36,4 +39,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin git@github.com:07UPENDRA/my-app.git
-          GIT_SSH_COMMAND='ssh -i ~/.ssh/personal' npm run deploy
+          npm run deploy
