@@ -35,4 +35,4 @@ jobs:
         git config --global user.name "07UPENDRA"
         git config --global user.email "up.krishna21@gmail.com"
         git remote set-url origin git@github.com:07UPENDRA/my-app.git
-        npm run deploy
+        GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa2' npm run deploy
